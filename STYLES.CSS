@@ -4,8 +4,14 @@ body {
   padding: 0;
   background: black;
   font-family: Arial, sans-serif;
-  overflow: hidden;
   color: white;
+
+  /* Centrar contenido con Flexbox */
+  display: flex;
+  justify-content: center; /* centra horizontalmente */
+  align-items: center;     /* centra verticalmente */
+  min-height: 100vh;
+  overflow: hidden;
 }
 
 /* Estrellas animadas con 3 capas */
@@ -37,9 +43,10 @@ body {
 .container {
   position: relative;
   z-index: 2;
-  top: 40%;
-  transform: translateY(-40%);
+  top: 0;           /* eliminado top anterior */
+  transform: none;  /* eliminado transform */
   text-align: center;
+  padding: 20px;    /* espacio interno para móviles */
 }
 
 /* Texto principal siempre visible */
@@ -83,3 +90,17 @@ body {
   0%, 100% { transform: translateY(-50%) translateY(0); }
   50% { transform: translateY(-50%) translateY(-20px); }
 }
+
+/* Ajustes para pantallas pequeñas */
+@media screen and (max-width: 600px) {
+  .mensaje {
+    font-size: 2rem;
+  }
+  .bunny {
+    font-size: 40px;
+  }
+  .love span {
+    font-size: 18px;
+  }
+}
+
