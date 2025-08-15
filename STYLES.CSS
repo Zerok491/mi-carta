@@ -8,7 +8,7 @@ body {
   color: white;
 }
 
-/* Estrellas animadas con 3 capas para parallax */
+/* Estrellas animadas con 3 capas */
 .stars, .stars2, .stars3 {
   position: absolute;
   width: 100%;
@@ -74,6 +74,12 @@ body {
   top: 60%;
   transform: translateY(-50%);
   z-index: 3;
+  animation: saltar 2s infinite ease-in-out;
 }
 .bunny.left { left: 20%; }
 .bunny.right { right: 20%; }
+
+@keyframes saltar {
+  0%, 100% { transform: translateY(-50%) translateY(0); }
+  50% { transform: translateY(-50%) translateY(-20px); }
+}
