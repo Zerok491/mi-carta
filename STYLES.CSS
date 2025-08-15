@@ -55,6 +55,14 @@ body {
   color: white;
 }
 
+/* Contenedor de corazones y conejitos */
+.love-bunnies {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
 /* Corazones */
 .love {
   display: flex;
@@ -74,11 +82,6 @@ body {
 }
 
 /* Conejos */
-.bunny-container {
-  display: flex;
-  justify-content: space-between;
-  width: 200px;
-}
 .bunny {
   font-size: 60px;
   animation: saltar 2s infinite ease-in-out;
@@ -100,7 +103,7 @@ body {
   .love span {
     font-size: 18px;
   }
-  .bunny-container {
-    width: 120px;
+  .love-bunnies {
+    gap: 5px;
   }
 }
