@@ -4,42 +4,62 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Carta Animada</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="STYLES.CSS">
+  <style>
+    /* Estilos básicos para que funcione incluso si no cargas tu CSS */
+    body {
+      margin: 0;
+      padding: 0;
+      background: black;
+      color: white;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      overflow: hidden;
+    }
+    .container {
+      position: relative;
+      z-index: 2;
+      top: 40%;
+      transform: translateY(-40%);
+    }
+    .love span {
+      display: inline-block;
+      font-size: 24px;
+      color: red;
+      animation: flotar 2s infinite ease-in-out;
+    }
+    @keyframes flotar {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+    .bunny {
+      font-size: 60px;
+      position: absolute;
+      top: 60%;
+      transform: translateY(-50%);
+    }
+    .bunny.left {
+      left: 20%;
+    }
+    .bunny.right {
+      right: 20%;
+    }
+  </style>
 </head>
 <body>
-  <!-- Fondo de estrellas -->
-  <div class="stars"></div>
-  <div class="stars2"></div>
-  <div class="stars3"></div>
-
   <!-- Contenido principal -->
   <div class="container">
     <h1 id="mensaje"></h1>
     <div class="love">
       <!-- corazones generados con span -->
-      <span style="--i:0;"></span>
-      <span style="--i:1;"></span>
-      <span style="--i:2;"></span>
-      <span style="--i:3;"></span>
-      <span style="--i:4;"></span>
-      <span style="--i:5;"></span>
-      <span style="--i:6;"></span>
-      <span style="--i:7;"></span>
-      <span style="--i:8;"></span>
-      <span style="--i:9;"></span>
-      <span style="--i:10;"></span>
-      <span style="--i:11;"></span>
-      <span style="--i:12;"></span>
-      <span style="--i:13;"></span>
-      <span style="--i:14;"></span>
-      <span style="--i:15;"></span>
-      <span style="--i:16;"></span>
-      <span style="--i:17;"></span>
-      <span style="--i:18;"></span>
-      <span style="--i:19;"></span>
+      <span>❤️</span><span>❤️</span><span>❤️</span>
+      <span>❤️</span><span>❤️</span><span>❤️</span>
+      <span>❤️</span><span>❤️</span><span>❤️</span>
+      <span>❤️</span>
     </div>
-    <img src="https://i.postimg.cc/4NqJbF2b/conejo.png" class="bunny left" alt="Conejo">
-    <img src="https://i.postimg.cc/4NqJbF2b/conejo.png" class="bunny right" alt="Conejo">
+    <!-- Reemplazo de imágenes por emojis -->
+    <div class="bunny left">🐰</div>
+    <div class="bunny right">🐰</div>
   </div>
 
   <script>
