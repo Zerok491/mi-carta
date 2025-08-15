@@ -61,7 +61,7 @@ body {
   align-items: center;
   justify-content: space-between; /* conejos a los extremos */
   width: 100%;
-  max-width: 400px; /* limita ancho en PC */
+  padding: 0 20px; /* separación de bordes */
   margin-top: 20px;
 }
 
@@ -70,6 +70,7 @@ body {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  flex-grow: 1; /* mantiene corazones centrados */
 }
 
 .love {
@@ -78,6 +79,7 @@ body {
   justify-content: center;
   gap: 5px;
 }
+
 .love span {
   font-size: 24px;
   color: red;
@@ -112,8 +114,6 @@ body {
     font-size: 18px;
   }
   .love-bunnies {
-    max-width: 250px;
     gap: 5px;
   }
 }
-
