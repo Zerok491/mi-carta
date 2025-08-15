@@ -1,102 +1,79 @@
+/* Fondo negro y tipografía general */
 body {
   margin: 0;
   padding: 0;
-  background: #0a0220;
-  overflow: hidden;
+  background: black;
   font-family: Arial, sans-serif;
+  overflow: hidden;
+  color: white;
 }
 
-.container {
-  text-align: center;
-  position: relative;
-  height: 100vh;
-  z-index: 10;
-}
-
-h1 {
-  color: #ff4d6d;
-  font-size: 3em;
-  margin-top: 30px;
-  text-shadow: 0 0 10px rgba(255,255,255,0.8);
-}
-
-/* Corazón formado por emojis */
-.love {
-  position: relative;
-  width: 300px;
-  height: 300px;
-  margin: 50px auto;
-}
-
-.love span {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  transform: rotate(calc(18deg * var(--i)));
-}
-
-.love span::before {
-  content: "💕";
-  position: absolute;
-  top: 0;
-  left: 50%;
-  font-size: 24px;
-  color: #ff4d6d;
-  animation: anim 2s linear infinite;
-  transform-origin: 0 150px;
-}
-
-@keyframes anim {
-  0% { transform: rotate(0deg) translateY(0); opacity: 1; }
-  100% { transform: rotate(360deg) translateY(-20px); opacity: 0.5; }
-}
-
-/* Conejitos */
-.bunny {
-  position: absolute;
-  bottom: 20px;
-  width: 80px;
-}
-
-.bunny.left {
-  left: 20px;
-}
-
-.bunny.right {
-  right: 20px;
-}
-
-/* Fondo de estrellas */
+/* Estrellas animadas con 3 capas para parallax */
 .stars, .stars2, .stars3 {
   position: absolute;
-  top: 0; left: 0;
   width: 100%;
   height: 100%;
-  background-repeat: repeat;
-  background-size: contain;
+  background: transparent url('https://www.transparenttextures.com/patterns/stardust.png') repeat;
+  animation: moverEstrellas 60s linear infinite;
   z-index: 0;
 }
-
-.stars {
-  background-image: url('https://www.transparenttextures.com/patterns/stardust.png');
-  animation: animStars 50s linear infinite;
-}
-
 .stars2 {
-  background-image: url('https://www.transparenttextures.com/patterns/stardust.png');
-  animation: animStars 100s linear infinite;
-  opacity: 0.5;
+  background-size: 2px 2px;
+  animation-duration: 100s;
+  opacity: 0.6;
 }
-
 .stars3 {
-  background-image: url('https://www.transparenttextures.com/patterns/stardust.png');
-  animation: animStars 150s linear infinite;
+  background-size: 3px 3px;
+  animation-duration: 150s;
   opacity: 0.3;
 }
 
-@keyframes animStars {
+@keyframes moverEstrellas {
   from {background-position: 0 0;}
   to {background-position: -10000px 5000px;}
 }
+
+/* Contenedor principal */
+.container {
+  position: relative;
+  z-index: 2;
+  top: 40%;
+  transform: translateY(-40%);
+  text-align: center;
+}
+
+/* Texto principal siempre visible */
+.mensaje {
+  color: white !important;
+  font-size: 3rem;
+  text-align: center;
+  z-index: 5;
+  position: relative;
+}
+
+/* Corazones */
+.love {
+  margin-top: 20px;
+}
+.love span {
+  display: inline-block;
+  font-size: 24px;
+  color: red;
+  animation: latir 1.5s infinite ease-in-out;
+}
+
+@keyframes latir {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.3); }
+}
+
+/* Conejos */
+.bunny {
+  font-size: 60px;
+  position: absolute;
+  top: 60%;
+  transform: translateY(-50%);
+  z-index: 3;
+}
+.bunny.left { left: 20%; }
+.bunny.right { right: 20%; }
